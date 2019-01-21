@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Авторизация</title>
+    <script type="text/javascript" th:src="@{/js/src/validationScript.js}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/src/authScript.js}"></script>
+</head>
+<body>
+    <div>
+        <table>
+        <td>
+            <tr>
+                <label>
+                    Login
+                </label>
+                <input th:id="login" class="text-field" placeholder="Введите Логин"/>
+            </tr>
+            <tr>
+                <label>
+                    Password
+                </label>
+                <input th:id="password" class="text-field" placeholder="Введите Пароль"/>
+            </tr>
+        </td>
+        </table>
+    </div>
+    <div>
+        <button name="auth" onclick="authorisation()">
+            Войти
+        </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>My Peoples</title>
+    <script type="text/javascript" th:src="@{/js/src/validationScript.js}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/src/peopleSaveScript.js}"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <label>Имя</label>
+                <input th:name="firstName" placeholder="Имя" type="text" th:class="text-field"/>
+            </td>
+            <td>
+                <label>Фамилия</label>
+                <input th:name="secondName" placeholder="Фамилию" th:class="text-field"/>
+            </td>
+            <td>
+                <label>Отчество</label>
+                <input th:name="thirdName" placeholder="Введите Отчество" th:class="text-field"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Возраст</label>
+                <input th:name="age" placeholder="Возраст" th:class="text-field"/>
+            </td>
+            <td>
+                <label>Мобильный телефон</label>
+                <input th:name="mobilephoneNumber" placeholder="Мобильный номер" th:class="text-field"/>
+            </td>
+            <td>
+                <label>Второй телефон</label>
+                <input th:name="telephoneNomber" placeholder="Другой номер" th:class="text-field"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Дата рождения</label>
+                <input th:name="bday" placeholder="Дата рождения" th:class="text-field"/>
+            </td>
+            <td>
+                <label>Домашний адрес</label>
+                <input th:name="homeAddres" placeholder="Адрес" th:class="text-field"/>
+            </td>
+            <td>
+                <label>Пол</label>
+                <input th:name="gender" placeholder="Пол" th:class="text-field"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    Кем приходится
+                </label>
+                <input th:name="group" th:class="text-field" placeholder="Кем является"/>
+            </td>
+            <td>
+                <label>Семейное положение</label>
+                <div>
+                    <input th:type="checkbox" th:name="isMarry"
+                           th:value="isMarry"/>
+                    <label th:for="isMarry">Женат?</label>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <button th:type="button" th:name="sandToDB" th:onclick="SaveNewPeople()">
+        Сохранить в базе
+    </button>
+</body>
+</html>
