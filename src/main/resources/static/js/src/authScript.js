@@ -12,6 +12,7 @@ var authorisation = function () {
             dataType: 'json',
             async: false,
             success: function (authResult) {
+
                 window.location("http://localhost:9090/peoples/save/authResult")
             },
             error: function (jqXHR, textStatus, errorThrown) {

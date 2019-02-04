@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Map;
 
 @Controller
-public class ViewController {
+public class ViewControllerView {
 
     @RequestMapping(path = "/peoples/save/{token}")
     public String getIndexPage(@PathVariable String token, Map<String, Object>model){
