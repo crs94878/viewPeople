@@ -1,4 +1,4 @@
-package famaly.people.servlet.models;
+package famaly.people.servlet.models.request.user.credentials;
 
 public class Credentials {
     private String login;
