@@ -26,6 +26,7 @@ public class AuthController {
             AuthSession session = authorisationService.authorisation(requestAthh);
             return new ResponseEntity<>( session, HttpStatus.OK);
         }catch (Exception ex){
+            System.out.println(ex.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

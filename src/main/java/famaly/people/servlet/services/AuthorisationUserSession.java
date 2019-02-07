@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class AuthorisationUserSession implements AuthorisationService {
 
-    @Autowired
+
     private AuthSession session;
 
     @Autowired
