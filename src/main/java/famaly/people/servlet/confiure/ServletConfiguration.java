@@ -4,6 +4,7 @@ import famaly.people.servlet.models.request.user.credentials.Credentials;
 import famaly.people.servlet.models.response.front.AuthSession;
 import famaly.people.servlet.services.AuthorisationService;
 import famaly.people.servlet.services.AuthorisationUserSession;
+import famaly.people.servlet.services.ValidationService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.*;
 import org.springframework.http.HttpEntity;
@@ -13,6 +14,12 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class ServletConfiguration {
+
+    @Bean
+    @Lazy
+    public ValidationService validationService(AuthorisationUserSession authorisationUserSession){
+        return authorisationUserSession;
+    }
 
     @Bean
     @Lazy

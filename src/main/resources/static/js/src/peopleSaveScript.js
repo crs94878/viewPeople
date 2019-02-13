@@ -11,7 +11,7 @@ var SaveNewPeople = function () {
         'gender': document.querySelector("[name='gender']").value,
         'isMarry': document.querySelector("[name='isMarry'").checked
     };
-    if (formValidation()) {
+    if (validationCookieData() & formValidation()) {
         $.ajax({
             type: 'POST',
             url: 'http://localhost:9191/peoples/save/new',
