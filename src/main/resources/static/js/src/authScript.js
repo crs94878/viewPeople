@@ -18,9 +18,8 @@ var authorisation = function () {
                 }
                 else alert("Авторизация НЕ была пройдена")
             },
-            error: function (jqXHR, textStatus, errorThrown) {
-                alert(jqXHR.status + ' ' + jqXHR.responseText + "\n" + textStatus.toString() + "\n" +
-                errorThrown.toString());
+            error: function (exception) {
+                alert(exception.responseJSON["message"]);
             }
         })
     }
