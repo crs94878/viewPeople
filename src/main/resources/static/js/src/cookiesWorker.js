@@ -17,6 +17,17 @@ function getCookie(name) {
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
+function deleteCookie(cookies) {
+    var cookiesArray = cookies.split(";");
+    var date = new Date(0);
+    var i = cookiesArray.length;
+    while(i>0){
+        cookiesName = cookiesArray[i-1].substring(0, cookiesArray[i-1].indexOf("="));
+        document.cookie = cookiesName + "=; path=/; expires=" + date.toUTCString();
+        i--;
+    }
+}
+
 var validationCookieData = function () {
     var session = {
         "sessionId": getCookie("sessionId"),
@@ -35,9 +46,10 @@ var validationCookieData = function () {
             if(getCookie("sessionId" === result["sessionName"]))
             return result["validation"];
         },
-        error: function (jqXHR, textStatus, errorThrown) {
-            alert("Вам необходимо авторизоваться");
+        error: function (errors) {
+            alert(errors.responseJSON["message"] + "\nВам необходимо авторизоваться");
             location.href = 'http://localhost:9090/page/auth'
+            deleteCookie(document.cookie);
             return false;
         }
     });
